@@ -20,10 +20,27 @@ public class Client {
         BufferedReader inClient = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         PrintWriter outClient = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
 
-        // Write message to the server
-        outClient.println("something");
+        System.out.println("saisir une chaine: ");
+        Scanner s=new Scanner(System.in);
+        String ch=s.nextLine();
+        outClient.println(ch);
+
+
+        System.out.println(inClient.readLine());
+
+        System.out.println("saisir une chaine: ");
+        Scanner s2=new Scanner(System.in);
+        String ch2=s2.nextLine();
+
+        System.out.println("saisir un caractère: ");
+        Scanner s3=new Scanner(System.in);
+        char c=s3.nextLine().charAt(0);*/
+
+        //Write message to the server
+        outClient.println(ch);
+        outClient.println(c);
         // Read a message from the server
-        inClient.readLine();
+         System.out.println(inClient.readLine());
 
         //****** if you're using DataInputStream & DataOutputStream ******
 
