@@ -21,10 +21,32 @@ public class Server {
         BufferedReader inServer = new BufferedReader(new InputStreamReader(socClient.getInputStream()));
         PrintWriter outServer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socClient.getOutputStream())), true);
 
+
+        String ch=inServer.readLine();
+
+                int j=ch.length()-1;
+                int i=0;
+                while(ch.charAt(i)==ch.charAt(j) && i<ch.length()/2 && j>(ch.length()/2)-1  ) {
+                    i++;
+                    j--;
+                }
+                
+                if (i==ch.length()/2)
+                    System.out.println(ch+"est palindrome");
+                else
+                    System.out.println(ch+"n'est pas palindrome");
+
+
+
+        outServer.println(String.valueOf(k));
+
         // Read message sent by the client
-        inServer.readLine();
+
+       // String ch=inServer.readLine();
+        char c=inServer.readLine().charAt(0);
+        outServer.println( ch.indexOf(c));
+
         // Write message to the client
-        System.out.println("something");
 
         // ****** if you're using DataInputStream & DataOutputStream ******
 
