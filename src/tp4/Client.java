@@ -20,24 +20,39 @@ public class Client {
         BufferedReader inClient = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         PrintWriter outClient = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
 
-        // Write message to the server
-        outClient.println("something");
-        // Read a message from the server
-        inClient.readLine();
+       //Activité 1
+        System.out.println("Doneez une chaine");
+        Scanner s=new Scanner(System.in);
+        String a=s.nextLine();
+        outClient.println(a);
+        //affichage du resultat dans le côté client
+        System.out.println(inClient.readLine());
 
-        //****** if you're using DataInputStream & DataOutputStream ******
 
-        //DataInputStream inClient = new DataInputStream(socket.getInputStream());
-        //DataOutputStream outClient = new DataOutputStream(socket.getOutputStream());
 
-        //System.out.println("Enter your msg");
-        //String str = new Scanner(System.in).nextLine();
-        //outClient.writeUTF(str);
-        //outClient.flush();
+        // Activité 2
+        System.out.println("Doneez une chaine");
+        Scanner d=new Scanner(System.in);
+        String x=d.nextLine();
+        outClient.println(x);
 
-        //****** if you're using DataInputStream & DataOutputStream ******
+        System.out.println("Doneez un caractère");
+        Scanner t=new Scanner(System.in);
+        char y=t.nextLine().charAt(0);
+        outClient.println(y);
 
-        //close in / out
+        System.out.println(inClient.readLine());
+
+
+
+        //Activité 3
+        System.out.println("Doneez une chaine");
+        Scanner f=new Scanner(System.in);
+        String b=f.nextLine();
+        outClient.println(b);
+
+        System.out.println(inClient.readLine());
+
         inClient.close();
         outClient.close();
 
